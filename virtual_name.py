@@ -5,7 +5,6 @@ Created on Fri Mar 17 09:28:42 2017
 @author: tedoreve
 """
 
-import sys
 import hashlib
 from read import read
 from functools import reduce

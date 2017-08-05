@@ -15,12 +15,12 @@ import pandas as pd
 dec_low = np.deg2rad(-11)
 dec_hig = np.deg2rad(66)
 
-ra  = np.linspace(-np.pi,np.pi,500)
+ra  = np.linspace(-np.pi,np.pi,100)
 
 #dec1 = np.linspace(dec_hig,dec_hig,10000)
 #dec2 = np.linspace(dec_low,dec_low,10000)
 
-dec  = np.linspace(dec_low,dec_hig,500)
+dec  = np.linspace(dec_low,dec_hig,100)
 
 #c1 = SkyCoord(ra=ra*u.rad, dec=dec1*u.rad, frame='icrs')
 #c2 = SkyCoord(ra=ra*u.rad, dec=dec2*u.rad, frame='icrs')
@@ -46,8 +46,8 @@ plt.figure()
 plt.subplot(111, projection="aitoff")
 #plt.subplot(111) 
 #plt.plot(l,b,'o',color='r',markeredgecolor='r',markersize=1)
-plt.plot(df.l,df.b,'o',color='g',markeredgecolor='g',markersize=9)
-#
+plt.plot(df.l,df.b,'o',color='g',markeredgecolor='g',markersize=9,label='xx')
+plt.legend()
 ##plt.scatter(df.l,df.b,c=0.5, alpha=0.5)
 plt.title("Aitoff")
 plt.grid(True)

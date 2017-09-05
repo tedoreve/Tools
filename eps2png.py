@@ -16,4 +16,6 @@ for name in filename:
         data = mp.imread(name)
         plt.axis("off")
         plt.imshow(data)
-        plt.savefig(name.replace('.eps','.png'))
+        plt.subplots_adjust(top=1.0,bottom=0.0,left=0.0,right=1.0)
+#        plt.savefig(name.replace('.eps','.png'))
+        plt.show()

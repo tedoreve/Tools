@@ -25,14 +25,14 @@ class character(object):
 #=================================main=========================================
 if __name__=='__main__':
     pool   = []
-    people = 45
-    init_m = 45
-    cycle  = 5000 
+    people = 450
+    init_m = 450
+    cycle  = 500 
     
     for i in range(people):
         pool.append(character('id'+str(i),init_m))
         
-    for j in range(50):
+    for j in range(cycle):
         for i in range(people):
             idnumber = ran.randint(0,people-1)
             pool[i].give_money()
@@ -42,5 +42,5 @@ if __name__=='__main__':
     for i in range(people):
         now_m.append(pool[i].money)
     now_m.sort()   
-    plt.plot(now_m)
+    plt.hist(now_m)
     

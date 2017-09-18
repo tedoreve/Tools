@@ -6,9 +6,11 @@ Created on Sun Sep 17 21:37:38 2017
 """
 
 import random as ran
+import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import leastsq
 
-#===============================character======================================
+#===============================function=======================================
 class pixel(object):
     
     def __init__(self,name,density):            
@@ -22,6 +24,16 @@ class pixel(object):
         self.dens += num
 #        self.life   = self.belief*self.pop
 #        self.magic  = self.belief/self.pop
+
+def fun(x,p):
+    n0,alpha = p
+    return n0*x**-alpha
+    
+def residuals(p, y, z):
+    """
+    实验数据x, y和拟合函数之间的差，p为拟合需要找到的系数
+    """
+    return (y - fun(z,p))
 #=================================main=========================================
 if __name__=='__main__':
     pool    = []
@@ -45,5 +57,12 @@ if __name__=='__main__':
     for i in range(pix_num):
         now_m.append(pool[i].dens)
     now_m.sort()   
-    plt.hist(now_m)
+    n, bins, patches = plt.hist(now_m, 60)
+    
+
+
+    p0 = [1,100]
+    plsq, pcov, infodict, errmsg, success = leastsq(residuals, p0,args=(n,bins[1:61]),full_output=1, epsfcn=0.0001)
+    x = np.linspace(0,10000,1000)
+    plt.plot(x, fun(x,plsq), 'r--', linewidth=2)
     

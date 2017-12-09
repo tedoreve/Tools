@@ -39,7 +39,7 @@ if __name__=='__main__':
     pool    = []
     pix_num = 128*128
     init_d  = 1000
-    cycle   = 5000 
+    cycle   = 1000 
     
     for i in range(pix_num):
         pool.append(pixel('id'+str(i),init_d))
@@ -57,12 +57,12 @@ if __name__=='__main__':
     for i in range(pix_num):
         now_m.append(pool[i].dens)
     now_m.sort()   
-    n, bins, patches = plt.hist(now_m, 60)
+    n, bins, patches = plt.hist(now_m)
     
 
 
-    p0 = [1,100]
-    plsq, pcov, infodict, errmsg, success = leastsq(residuals, p0,args=(n,bins[1:61]),full_output=1, epsfcn=0.0001)
-    x = np.linspace(0,10000,1000)
-    plt.plot(x, fun(x,plsq), 'r--', linewidth=2)
+#    p0 = [1,100]
+#    plsq, pcov, infodict, errmsg, success = leastsq(residuals, p0,args=(n,bins[1:61]),full_output=1, epsfcn=0.0001)
+#    x = np.linspace(0,10000,1000)
+#    plt.plot(x, fun(x,plsq), 'r--', linewidth=2)
     

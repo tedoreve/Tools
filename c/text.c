@@ -13,8 +13,9 @@ main()
 	// count1();
 	// count2();
 	// count3();
-	arr();
-	// exam1();	
+	// arr();
+	// printf("%d\n",power(2,9));
+	exam1();	
 }
 
 egwhile()
@@ -55,10 +56,14 @@ egchar1()
 
 egchar2()
 {
-	int c;
+	int c, f;
 	
 	while ((c = getchar()) != EOF) {
 		putchar(c);
+		printf("%ld\n",sizeof(0.0));
+		f = c - '0';
+		// if (f >= 0 && f <= 9)
+			// printf("\n%3d\n",f);
 	}
 }
 
@@ -121,6 +126,17 @@ arr()
 		printf(" %d", ndigit[i]);
 	printf(", white space = %d, other = %d\n",nwhite, nother);
 }
+
+power(base,n)
+{
+	int i, p;
+	
+	p=1;
+	for (i = 1; i <= n; ++i)
+		p = p * base;
+	return p;
+}
+
 
 exam1()
 {

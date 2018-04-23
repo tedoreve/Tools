@@ -18,7 +18,7 @@ import pandas as pd
 
 dec_low = np.deg2rad(-11) #最小赤纬
 dec_hig = np.deg2rad(66)  #最大赤纬
-res     = 1000            #分辨率，数值越大，分辨率越高，图越好看，程序跑起来越慢。1000一般足够了。
+res     = 100            #分辨率，数值越大，分辨率越高，图越好看，程序跑起来越慢。1000一般足够了。
 
 ra  = np.linspace(-np.pi,np.pi,res)      #初始化赤经范围数组
 

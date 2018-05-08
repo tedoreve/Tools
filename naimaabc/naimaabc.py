@@ -58,5 +58,5 @@ if __name__ == '__main__':
     naima.save_run(out_root, sampler)
 
     ## Save diagnostic plots and results table
-    naima.save_diagnostic_plots(out_root, sampler, sed=False)
+    naima.save_diagnostic_plots(out_root, sampler, sed=True)
     naima.save_results_table(out_root, sampler)

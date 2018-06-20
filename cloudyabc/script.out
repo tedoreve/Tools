@@ -1,0 +1,20 @@
+                                                          Cloudy 17.00
+                                                         www.nublado.org
+
+                       **************************************17Jun01**************************************
+                       *                                                                                 *
+                       * title coronal equilibrium                                                      *
+                       *                                                                                 *
+                       ***********************************************************************************
+
+
+
+ PROBLEM DISASTER Hydrogen density MUST be specified.
+ PROBLEM DISASTER No incident radiation field was specified - at least put in the CMB.
+ PROBLEM DISASTER I do not have enough information to do the simulation, I cannot go on.
+
+
+ Sorry.
+
+
+ [Stop in ParseCommands at parse_commands.cpp:830, something went wrong]

@@ -1,0 +1,13 @@
+title coronal equilibrium
+
+coronal 4 vary
+grid 1 9 0.25 sequential log
+
+hden 1
+
+stop zone 1
+set dr 0
+
+save grid "grid_coronal.grd" last no hash
+save ages "grid_coronal.age" last no hash
+save cooling "grid_coronal.col" last no hash

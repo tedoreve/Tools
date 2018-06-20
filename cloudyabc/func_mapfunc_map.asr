@@ -1,0 +1,16 @@
+=============Results of monitors: Cloudy 17.00 Sun May 27 19:29:31 2018
+ No errors were found.  Summary follows.
+                   Label         line    computed     asserted Rel Err Set err  type         
+ ChkMonitor -      MapH          1173   -22.5502 =   -22.5410   0.021   0.050            
+ ChkMonitor        MapC          1173   -23.1893 =   -23.1900  -0.001   0.050            
+ ChkMonitor -      MapH          9313   -23.0479 =   -23.0380   0.023   0.050            
+ ChkMonitor        MapC          9313   -23.0791 =   -23.0800  -0.002   0.050            
+ ChkMonitor        MapH         90959   -23.8526 =   -23.8500   0.006   0.050            
+ ChkMonitor        MapC         90959   -21.2991 =   -21.3000  -0.002   0.050            
+ ChkMonitor        MapH        888290   -26.0543 =   -26.0490   0.012   0.050            
+ ChkMonitor        MapC        888290   -21.7999 =   -21.8000  -0.000   0.050            
+ ChkMonitor ---    MapH       8674900   -27.3860 =   -27.3520   0.075   0.100            
+ ChkMonitor -      MapC       8674900   -22.4609 =   -22.4500   0.025   0.050            
+ ChkMonitor -      MapH      84718000   -28.0181 =   -28.0060   0.027   0.100            
+ ChkMonitor --     MapC      84718000   -22.4823 =   -22.4710   0.026   0.050            
+ 

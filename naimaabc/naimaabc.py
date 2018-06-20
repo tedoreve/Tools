@@ -49,5 +49,6 @@ plt.xlabel('Photon energy [{0}]'.format(
 plt.ylabel('$E^2 dN/dE$ [{0}]'.format(
         sed_SYN.unit.to_string('latex_inline')))
 plt.ylim(1e-12, 1e-6)
+#plt.ylim(1e-31, 1e-12)
 plt.tight_layout()
 plt.legend(loc='lower left')

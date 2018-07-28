@@ -7,7 +7,7 @@ from naima.models import (ExponentialCutoffPowerLaw, Synchrotron,
 from astropy.constants import c
 import astropy.units as u
 
-ECPL = ExponentialCutoffPowerLaw(1e36*u.Unit('1/eV'), 1*u.TeV, 2.1, 13*u.TeV)
+ECPL = ExponentialCutoffPowerLaw(1e36*u.Unit('1/eV'), 1*u.TeV, 2.0, 13*u.TeV)
 SYN = Synchrotron(ECPL, B=100*u.uG)
 
 # Define energy array for synchrotron seed photon field and compute
@@ -24,7 +24,7 @@ IC = InverseCompton(ECPL, seed_photon_fields=['CMB', 'FIR', 'NIR',
                                               ['SSC', Esy, phn_sy]])
 
 # Compute SEDs
-spectrum_energy = np.logspace(-1,14,100)*u.eV
+spectrum_energy = np.logspace(-10,14,100)*u.eV
 sed_IC = IC.sed(spectrum_energy, distance=1.5*u.kpc)
 sed_SYN = SYN.sed(spectrum_energy, distance=1.5*u.kpc)
 

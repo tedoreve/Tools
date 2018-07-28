@@ -6,21 +6,50 @@ Created on Wed Jul 25 12:36:58 2018
 """
 
 from nltk.corpus import words
+from nltk.corpus import wordnet
 import difflib
 from googletrans import Translator
 
 
+#==============================================================================
 
-word = 'like'  
+def similar(word, n, cutoff):
+    dic  = words.words()
+    sim  = difflib.get_close_matches(word, dic, n = n, cutoff = cutoff)    
+    
+    translator   = Translator()
+    translations = translator.translate(sim,dest='zh-cn')
+    
+    print('')
+    for translation in translations:
+        print(translation.origin, ' -> ', translation.text)
+    print('')
+    return sim
+    
+#==============================================================================
 
-dic  = words.words()
-sim  = difflib.get_close_matches(word, dic, n = 100, cutoff = 0.85)    
-
-translator   = Translator()
-translations = translator.translate(sim,dest='zh-cn')
-
-print('')
-for translation in translations:
-    print(translation.origin, ' -> ', translation.text)
-print('')
-print(sim)
+def meaning(sim):
+    synonyms = []
+    
+    for syn in wordnet.synsets(word):
+        for lm in syn.lemmas():
+                 synonyms.append(lm.name())
+    print (set(synonyms))
+    
+    antonyms = []
+    
+    for syn in wordnet.synsets(word):
+        for lm in syn.lemmas():
+            if lm.antonyms():
+                antonyms.append(lm.antonyms()[0].name())
+    
+    print(set(antonyms))
+    return '有空做个APP'
+    
+#==============================================================================
+if __name__ == '__main__':
+    word   = 'varnish'  
+    n      = 100          #upper limit number of similar words
+    cutoff = 0.85         #larger value means less words
+    sim    = similar(word, n, cutoff)
+    app    = meaning(sim)

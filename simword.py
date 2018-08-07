@@ -48,8 +48,8 @@ def meaning(sim):
     
 #==============================================================================
 if __name__ == '__main__':
-    word   = 'varnish'  
+    word   = 'liable'  
     n      = 100          #upper limit number of similar words
-    cutoff = 0.85         #larger value means less words
+    cutoff = 0.75         #larger value means less words
     sim    = similar(word, n, cutoff)
     app    = meaning(sim)

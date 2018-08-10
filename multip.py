@@ -11,9 +11,11 @@ if __name__=='__main__':
 #    index = []
     xx = []
     p = Pool(4)
-    for i in range(5):
-        for j in range(5):
-            for k in range(5):
+    n = 125
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                print(i,j,k)
                 r = p.apply_async(long_time_task, args=(i,j,k))
                 xx.append([i,j,k,r])
 #        index.append(i)
@@ -23,14 +25,15 @@ if __name__=='__main__':
 #    p.join(1)
 
     print('All subprocesses done.')
-    flux = np.zeros([5,5,5])
+    flux = np.zeros([n,n,n])
     
 #    a = np.asarray(xx)
 #    flux[a[:,0],a[:,1],a[:,2]] = a[:,3]
-    for n in xx:
-        flux[n[0],n[1],n[2]] = n[3].get()
+    for nn in xx:
+        print(nn[0],nn[1],nn[2])
+        flux[nn[0],nn[1],nn[2]] = nn[3].get()
         
  
     flux.tofile("filename.bin")
     b = np.fromfile("filename.bin",dtype = 'float64')
-    b.shape = (5,5,5)
+    b.shape = (n,n,n)

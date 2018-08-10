@@ -2,7 +2,8 @@ import time, threading
 import numpy as np
 
 # 假定这是你的银行存款:
-x = 5
+start = time.time()
+x = 128
 balance = np.zeros([x,x,x])
 
 def change_it(i,j,k):
@@ -18,14 +19,14 @@ def run_thread(n):
                 print(i,j,k)
                 change_it(i,j,k)
 
-t1 = threading.Thread(target=run_thread, args=(x,))
-#t2 = threading.Thread(target=run_thread, args=(8,))
-t1.start()
-#t2.start()
-t1.join()
-#t2.join()
-print(balance)
+#t1 = threading.Thread(target=run_thread, args=(x,))
+#t1.start()
+#t1.join()
 
+run_thread(x)
+print(balance)
+end = time.time()
+print(end-start)
 #from multiprocessing import Pool
 #import os, time, random
 #

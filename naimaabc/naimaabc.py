@@ -24,7 +24,7 @@ IC = InverseCompton(ECPL, seed_photon_fields=['CMB', 'FIR', 'NIR',
                                               ['SSC', Esy, phn_sy]])
 
 # Compute SEDs
-spectrum_energy = np.logspace(-10,14,100)*u.eV
+spectrum_energy = np.logspace(-8,14,100)*u.eV
 sed_IC = IC.sed(spectrum_energy, distance=1.5*u.kpc)
 sed_SYN = SYN.sed(spectrum_energy, distance=1.5*u.kpc)
 

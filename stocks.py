@@ -8,8 +8,9 @@ import pandas  as pd
 import tushare as ts
 import numpy as np
 
-s=open('C:/Users/tedoreve/Documents/Python_Scripts/data/stocks.txt','r')
+s=open('D:/Documents/Python_Scripts/data/stocks.txt','r')
 p=s.read()
+ts.set_token('b98c1a43b2d8e48ca091f8f5bdb1edfe03ba106f1d503f7ca839e942')
 #==============================================================================
 # 交易数据'line', 'bar', 'barh', 'kde', 'density', 'area', scatter', 'hexbin'
 #==============================================================================
@@ -33,7 +34,7 @@ p=s.read()
 #df = ts.get_stock_basics()
 #date = df.ix['600848']['timeToMarket'] #上市日期YYYYMMDD
 #
-df=ts.get_h_data('002292',start='2000-11-12',end='2015-11-12')                #前复权
+df=ts.get_h_data('002292',start='2000-11-12',end='2018-11-12')                #前复权
 df[['open','close']].plot(kind='line')
 #ts.get_h_data('002337',autype='hfq')   #后复权
 #ts.get_h_data('002337',autype=None)    #不复权
@@ -231,7 +232,8 @@ df[['open','close']].plot(kind='line')
 #df = fd.ThemesContent(field='themeName,themeBaseDate,isActive,insertTime')
 #df = df.sort('insertTime', ascending=False)
 #==============================================================================
-# 数据来源：http://pythonhosted.org/tushare/
+plt.show()
+# 数据来源：http://tushare.org/
 # 编写：古而树里
 # 开发：Anaconda
 #==============================================================================

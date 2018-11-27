@@ -23,7 +23,7 @@ if __name__ == '__main__':
     ylabel = 'y (pc)'
     name   = 't'+str(t)+'_xy.eps'
     print(D.rho.shape,D.bx1.shape)
-    b = np.fromfile("filename.bin",dtype = 'float64')
+    b = np.fromfile("../data/filename.bin",dtype = 'float64')
     b.shape = D.rho.shape
     pf.plot(i,b,xlabel,ylabel,name,sigma)
 

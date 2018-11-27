@@ -16,7 +16,7 @@ name = md5.hexdigest()
 f    = lambda x: (x[i:i+4] for i in range(29))
 leaf = set(f(name))
 
-code = read('code.txt')
+code = read('../code.txt')
 code = list(map(str.split,code))
 code = list(map(lambda x: list(map(str.lower,x)),code))
 root1= list(r[0] for r in code)

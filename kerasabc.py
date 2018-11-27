@@ -12,7 +12,7 @@ from keras.optimizers import SGD
 import keras
 import librosa as lr
 
-#data = lr.load('F:\mp3\xx\Kalafina-Believe.mp3')
+#data = lr.load('../data/Kalafina-Believe.mp3')
 # Generate dummy data
 import numpy as np
 x_train = np.random.random((1000, 20))

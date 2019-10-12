@@ -16,8 +16,7 @@ size = comm.Get_size()
 
 per = flux_vol.shape[2]//size
 
-print(per)
-print(flux_vol.shape[0])
+print(rank)
 
 comm.Barrier()
 start_time = time.time()

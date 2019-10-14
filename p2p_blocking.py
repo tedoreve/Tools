@@ -5,10 +5,10 @@ import numpy as np
 from mpi4py import MPI
 
 def f(x, y):
-    return x+y, y
+    return (2, 16777216001*16777216001)
 
 
-flux_vol = np.zeros([4,4,4,2])
+flux_vol = np.zeros([2,2,2,2])
 
 comm = MPI.COMM_WORLD
 rank = comm.Get_rank()

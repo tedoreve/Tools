@@ -4,14 +4,19 @@
 #include "stdlib.h"
 #include "stdio.h"
 
-#define MAXLINE 1000 /* maximum input line length */
-// int getline(char line[], int maxline);
-// void copy(char to[], char from[]);
 
-main()
+int main(void)
 {
-	srand(1000000000);
-	double a = rand() % 20 - 10;
-	printf("%f \n", a);
-	return 0;
+  double min=0, max=25;
+  srand((int)time(NULL));
+  int minInteger = (int)(min * 10000);
+  int maxInteger = (int)(max * 10000);
+  int randInteger = rand() * rand();
+  int diffInteger = maxInteger - minInteger;
+  int resultInteger = randInteger % diffInteger + minInteger;
+
+
+
+   // a = time(NULL);
+    printf("%6f \n", resultInteger/10000.0);
 }
